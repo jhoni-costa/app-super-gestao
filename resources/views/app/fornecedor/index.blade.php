@@ -14,7 +14,12 @@
     <br>
     @isset($fornecedores[1]['cnpj'])
         CNPJ: {{ $fornecedores[0]['cnpj']}}
+        @empty($fornecedores[1]['cnpj'])
+            - Vazio
+        @endempty
     @endisset
 @endisset;
+
+
 
 @dd($fornecedores)
