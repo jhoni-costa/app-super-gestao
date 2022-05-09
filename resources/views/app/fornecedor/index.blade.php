@@ -8,18 +8,53 @@
 
 
 @isset($fornecedores)
-    Fornecedor: {{ $fornecedores[0]['nome']}}
+@forelse($fornecedores as $fornecedor)
+{{--@dd($loop) --}}
+    Iteração atual: {{ $loop->iteration }}
     <br>
-    Status: {{ $fornecedores[0]['status']}}
+    Fornecedor: {{ $fornecedor['nome'] }}
     <br>
-    @isset($fornecedores[1]['cnpj'])
-        CNPJ: {{ $fornecedores[0]['cnpj']}}
-        @empty($fornecedores[1]['cnpj'])
-            - Vazio
-        @endempty
-    @endisset
-@endisset;
+    Status: {{ $fornecedor['status'] }}
+    <br>
+    CNPJ: {{ $fornecedor['cnpj'] ?? 'Dado não foi preenchido'}}
+    <br>
+    Telefone: ({{ $fornecedor['ddd'] ?? " "}}) {{ $fornecedor['telefone'] ?? "" }}
+    @switch($fornecedor['ddd'])
+        @case('41')
+            Curitiba - PR
+            @break
+        @case('42')
+            Ponta Grossa - PR
+            @break
+        @case('47')
+            Florianopolis - SC
+            @break
+        @default
+            DDD Não Encontrado
+    @endswitch
+    <br>
+    @if($loop->first)
+    Primeira iteração
+    @endif
+    @if($loop->last)
+    Última iteração
+    <br>
+    Total: {{$loop->count}}
+    @endif
+    <hr>
+    <!--
+    $variavel testada não estiver definida
+    ou
+    $variavel testada possui o valor null
+
+    Para escapar a tag de impressão do php inserir @.
+    exemplo @{{ }}
+     -->
+    @empty
+        Não existem fornecedores cadastrados!!
+    @endforelse
+@endisset
 
 
 
-@dd($fornecedores)
+{{-- @dd($fornecedores) --}}
