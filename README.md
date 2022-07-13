@@ -36,7 +36,7 @@
 ## :man: Contato
 
 <p align="left">
-  <a href="mailto:jhonirsc@gmail.com" alt="Gmail">
+  <a href="mailto:jhonirsc@gmail.com" alt="Gmail" onclick='alert("jhonirsc@gmail.com")'>
   <img src="https://img.shields.io/badge/-Gmail-FF0000?style=flat-square&labelColor=FF0000&logo=gmail&logoColor=white&link=jhonirsc@gmail.com" /></a>
 
   <a href="http://www.linkedin.com/in/jhonicosta" alt="Linkedin">
