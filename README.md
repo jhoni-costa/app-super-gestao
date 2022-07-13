@@ -22,6 +22,17 @@
 
 [![iuricode](https://github-readme-stats.vercel.app/api/top-langs/?username=jhoni-costa&hide=html&layout=compact&theme=default)](https://github.com/anuraghazra/github-readme-stats)
 
+## Ferramentas de Desenvolvimento
+
+  ![Linux](https://img.shields.io/badge/-Ubuntu-333333?style=flat&logo=ubuntu&logoColor=007ACC)
+  ![Windows](https://img.shields.io/badge/-Windows-333333?style=flat&logo=windows&logoColor=007ACC)
+  ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-333333?style=flat&logo=visual-studio-code&logoColor=007ACC)
+  ![Netbeans](https://img.shields.io/badge/-Netbeans-333333?style=flat&logo=netbeans-ide&logoColor=2C2255)
+  ![Workbench](https://img.shields.io/badge/-Workbench-333333?style=flat&logo=mysql&logoColor=007ACC)
+  ![Git](https://img.shields.io/badge/-Github-333333?style=flat&logo=github&logoColor=007ACC)
+  ![Todoist](https://img.shields.io/badge/-Todoist-333333?style=flat&logo=todoist&logoColor=007ACC)  
+  
+
 ## :man: Contato
 
 <p align="left">
