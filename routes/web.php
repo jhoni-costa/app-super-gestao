@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\LogAcessoMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,12 @@ Route::get('/', function () {
     return "<h1>Olá mundo!</h1>";
 });
 */
-Route::get('/',[\App\HTTP\Controllers\PrincipalController::class,'principal'])->name('site.index');
-Route::get('/sobre-nos',[\App\HTTP\Controllers\SobreNosController::class,'sobreNos'])->name('site.sobrenos');
+Route::get('/',[\App\HTTP\Controllers\PrincipalController::class,'principal'])
+    ->name('site.index')
+    ->middleware(LogAcessoMiddleware::class);
+Route::get('/sobre-nos',[\App\HTTP\Controllers\SobreNosController::class,'sobreNos'])
+    ->name('site.sobrenos')
+    ->middleware(LogAcessoMiddleware::class);
 Route::get('/contato',[\App\HTTP\Controllers\ContatoController::class,'contato'])->name('site.contato');
 // Route::post('/contato',[\App\HTTP\Controllers\ContatoController::class,'contato'])->name('site.contato');
 Route::post('/contato',[\App\HTTP\Controllers\ContatoController::class,'salvar'])->name('site.contato');
