@@ -16,15 +16,9 @@ Route::get('/', function () {
     return "<h1>Olá mundo!</h1>";
 });
 */
-Route::get('/',[\App\HTTP\Controllers\PrincipalController::class,'principal'])
-    ->name('site.index')
-    ->middleware(LogAcessoMiddleware::class);
-
+Route::get('/',[\App\HTTP\Controllers\PrincipalController::class,'principal'])->name('site.index');
 Route::get('/sobre-nos',[\App\HTTP\Controllers\SobreNosController::class,'sobreNos'])->name('site.sobrenos');
-
-    Route::get('/contato',[\App\HTTP\Controllers\ContatoController::class,'contato'])
-    ->name('site.contato')
-    ->middleware(LogAcessoMiddleware::class);
+Route::get('/contato',[\App\HTTP\Controllers\ContatoController::class,'contato'])->name('site.contato');
 // Route::post('/contato',[\App\HTTP\Controllers\ContatoController::class,'contato'])->name('site.contato');
 Route::post('/contato',[\App\HTTP\Controllers\ContatoController::class,'salvar'])->name('site.contato');
 Route::get('/login',function(){return 'Login';})->name('site.login');
