@@ -27,9 +27,11 @@ Route::post('/login',[\App\HTTP\Controllers\LoginController::class, 'autenticar'
 
 Route::middleware('autenticacao:padrao,visitante')->prefix('/app')->group(function(){
     // middleware('log.acesso','autenticacao')
-    Route::get('/clientes',function(){return 'Clientes';})->name('app.clientes');
-    Route::get('/fornecedores',[\App\HTTP\Controllers\FornecedorController::class,'index'])->name('app.fornecedor');
-    Route::get('/produtos',function(){return 'Produtos';})->name('app.produtos');
+    Route::get('/home',[\App\HTTP\Controllers\HomeController::class,'index'])->name('app.home');
+    Route::get('/sair',[\App\HTTP\Controllers\LoginController::class,'sair'])->name('app.sair');
+    Route::get('/cliente',[\App\HTTP\Controllers\ClienteController::class,'index'])->name('app.cliente');
+    Route::get('/fornecedore',[\App\HTTP\Controllers\FornecedorController::class,'index'])->name('app.fornecedor');
+    Route::get('/produto',[\App\HTTP\Controllers\ProdutoController::class,'index'])->name('app.produto');
 });
 
 Route::get('/teste/{p1}/{p2}',[\App\HTTP\Controllers\TesteController::class,'teste'])->name('teste');

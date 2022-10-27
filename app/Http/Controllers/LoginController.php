@@ -42,7 +42,7 @@ class LoginController extends Controller
             $_SESSION['nome'] = $usuario->name;
             $_SESSION['email'] = $usuario->email;
             // dd($_SESSION);
-            return redirect()->route("app.clientes");
+            return redirect()->route("app.home");
         }else{
             return redirect()->route("site.login",['erro' => 1]);
         }
@@ -50,5 +50,9 @@ class LoginController extends Controller
         // print_r($usuario);
         // echo "<pre>";
             
+    }
+
+    public function sair(){
+        echo "Sair";
     }
 }
