@@ -18,9 +18,9 @@ class FornecedorController extends Controller
             ->where('site', 'like', "%{$request->site}")
             ->where('uf', 'like', "%{$request->uf}")
             ->where('email', 'like', "%{$request->email}")
-            ->get();
+            ->paginate(2);
         // dd($fornecedores);
-        return view('app.fornecedor.listar', ['fornecedores' => $fornecedores]);
+        return view('app.fornecedor.listar', ['fornecedores' => $fornecedores, 'request' => $request->all()]);
     }
 
     public function editar($id, $msg = "")
